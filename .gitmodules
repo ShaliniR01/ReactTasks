@@ -1,0 +1,6 @@
+[submodule "tic-tac-toe"]
+	path = tic-tac-toe
+	url = https://github.com/ShaliniR01/tic-tac-toe
+[submodule "tic-tac-toee"]
+	path = tic-tac-toee
+	url = https://github.com/ShaliniR01/tic-tac-toe
