@@ -52,11 +52,10 @@ describe('Board Component',()=>{
         onPlay = jest.fn();
         render(<Board xIsNext={true} squares={squares} onPlay={onPlay}/>);
         const square = screen.getAllByTestId('square');
-        fireEvent.click(square[0]);
-        render(<Board xIsNext={true} squares={squares} onPlay={onPlay}/>);
-        const square1 = screen.getAllByTestId('square');
-        fireEvent.click(square1[1]);
-        expect(onPlay).toHaveBeenCalledTimes(2);
+        for(let i=0;i<9;i++){
+            fireEvent.click(square[i]);
+        }
+        expect(onPlay).toHaveBeenCalledTimes(9);
     });
 
     it('should display X and O in the board', () => {

@@ -3,14 +3,14 @@ import { screen, render, fireEvent } from "@testing-library/react";
 
 describe('Square Component',()=>{
 
-    it('should have the value ', () => {
+    it('should have the value in the square button ', () => {
         onSquareClick = jest.fn();
         render(<Square value='X' onSquareClick={onSquareClick} />);
         const square = screen.getByTestId('square');
         expect(square).toHaveTextContent('X');
     });
 
-    it('should call the function ', () => {
+    it('should call the function onSquareClick', () => {
         onSquareClick = jest.fn();
         render(<Square value='X' onSquareClick={onSquareClick} />);
         const square = screen.getByTestId('square');
@@ -18,14 +18,11 @@ describe('Square Component',()=>{
         expect(onSquareClick).toHaveBeenCalled();
     });
 
-    it('should call the function correct number of times ', () => {
+    it('should call the function onSquareClick correct number of times ', () => {
         onSquareClick = jest.fn();
         render(<Square value='X' onSquareClick={onSquareClick} />);
-        const square = screen.getAllByTestId('square');
-        fireEvent.click(square[0]);
-        render(<Square value='X' onSquareClick={onSquareClick} />);
-        const square1 = screen.getAllByTestId('square');
-        fireEvent.click(square1[1]);
+        fireEvent.click(screen.getByTestId('square'));
+        fireEvent.click(screen.getByTestId('square'));
         expect(onSquareClick).toHaveBeenCalledTimes(2);
     });
 })
