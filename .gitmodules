@@ -1,3 +1,6 @@
 [submodule "tic-tac-toe"]
 	path = tic-tac-toe
 	url = https://github.com/ShaliniR01/tic-tac-toe
+[submodule "TodoApp"]
+	path = TodoApp
+	url = https://github.com/ShaliniR01/TodoApp.git
