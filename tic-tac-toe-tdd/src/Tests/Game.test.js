@@ -77,15 +77,16 @@ describe('Game Component',()=>{
 
         const gameinfo = screen.getAllByTestId('gameinfo');
         fireEvent.click(gameinfo[2]);
-        for(let i=0;i<2;i++){
-            if(i%2==0)
-                expect(squareButton[i].textContent).toBe("X");
-            else
-                expect(squareButton[i].textContent).toBe("O");
-        }
-        for(let i=2;i>9;i--){
-            expect(squareButton[i].textContent).toBe("");
-        }
+
+        expect(squareButton[0].textContent).toBe("X");
+        expect(squareButton[1].textContent).toBe("O");
+        expect(squareButton[2].textContent).toBe("");
+        expect(squareButton[3].textContent).toBe("");
+        expect(squareButton[4].textContent).toBe("");
+        expect(squareButton[5].textContent).toBe("");
+        expect(squareButton[6].textContent).toBe("");
+        expect(squareButton[7].textContent).toBe("");
+        expect(squareButton[8].textContent).toBe("");
 
     });
 
@@ -101,16 +102,6 @@ describe('Game Component',()=>{
 
         const gameinfo = screen.getAllByTestId('gameinfo');
         fireEvent.click(gameinfo[2]);
-
-        for(let i=0;i<2;i++){
-            if(i%2==0)
-                expect(squareButton[i].textContent).toBe("X");
-            else
-                expect(squareButton[i].textContent).toBe("O");
-        }
-        for(let i=2;i>9;i--){
-            expect(squareButton[i].textContent).toBe("");
-        }
 
         fireEvent.click(squareButton[3]);
 

@@ -85,15 +85,16 @@ describe('Testing the time travel functionality', () => {
     cy.get('[data-testid="square"]').eq(4).click();
 
     cy.get('[data-testid="gameinfo"]').eq(2).click();
-    for(let i=0;i<2;i++){
-      if(i%2==0)
-        cy.get('[data-testid="square"]').eq(i).should('have.text','X');
-      else
-        cy.get('[data-testid="square"]').eq(i).should('have.text','O');
-    }
-    for(let i=2;i>9;i--){
-      cy.get('[data-testid="square"]').eq(i).should('have.text','');
-    }
+
+    cy.get('[data-testid="square"]').eq(0).should('have.text','X');
+    cy.get('[data-testid="square"]').eq(1).should('have.text','O');
+    cy.get('[data-testid="square"]').eq(2).should('have.text','');
+    cy.get('[data-testid="square"]').eq(3).should('have.text','');
+    cy.get('[data-testid="square"]').eq(4).should('have.text','');
+    cy.get('[data-testid="square"]').eq(5).should('have.text','');
+    cy.get('[data-testid="square"]').eq(6).should('have.text','');
+    cy.get('[data-testid="square"]').eq(7).should('have.text','');
+    cy.get('[data-testid="square"]').eq(8).should('have.text','');
   });
 
   it('should not display the remaining button after clicking the particular gameinfo button', () => {
@@ -105,15 +106,7 @@ describe('Testing the time travel functionality', () => {
     cy.get('[data-testid="square"]').eq(5).click();
 
     cy.get('[data-testid="gameinfo"]').eq(2).click();
-    for(let i=0;i<2;i++){
-      if(i%2==0)
-        cy.get('[data-testid="square"]').eq(i).should('have.text','X');
-      else
-        cy.get('[data-testid="square"]').eq(i).should('have.text','O');
-    }
-    for(let i=2;i>9;i--){
-      cy.get('[data-testid="square"]').eq(i).should('have.text','');
-    }
+
     cy.get('[data-testid="square"]').eq(3).click();
     cy.get('[data-testid="gameinfo"]').should('have.length',4);
   });
